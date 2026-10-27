@@ -210,7 +210,10 @@
       };
       try {
         var saved = localStorage.getItem("studio2201_theme");
-        if (saved && T[saved]) window.setSuiteTheme(saved);
+        if (saved && T[saved]) {
+          window.setSuiteTheme(saved);
+          document.addEventListener("DOMContentLoaded", function() { window.setSuiteTheme(saved); });
+        }
       } catch(e){}
     })();
   </script>
